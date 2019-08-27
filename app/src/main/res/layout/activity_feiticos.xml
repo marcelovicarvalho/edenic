@@ -9,12 +9,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/txtFeitico"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFeiticos"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </TextView>
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,8 @@ public class Feiticos extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        DatabaseHandler databaseHandler = new DatabaseHandler(this);
     }
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();

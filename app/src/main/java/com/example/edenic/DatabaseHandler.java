@@ -26,7 +26,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String SPELL_NIVEL = "nivel";
     private static final String SPELL_CAST_TIME = "castTime";
     private static final String SPELL_RANGE = "range";
-    private static final String SPELL_COMPONENTS = "components";
     private static final String SPELL_DURATION = "duration";
     private static final String SPELL_CLASSE = "classe";
     private static final String SPELL_DESC = "descricao";
@@ -46,30 +45,27 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String CHAR_CHAR = "char_char";
     private static final String CHAR_HP = "char_hp";
 
-
-    SQLiteDatabase database;
-    private SQLiteDatabase db;
-
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
         //banco feiticos
         db.execSQL("CREATE TABLE IF NOT EXISTS "
                 +TABLE_SPELLS+ "( "
-                +SPELL_ID + " "+"PRIMARY KEY AUTOINCREMENT, "
+                +SPELL_ID + " "+" INTEGER PRIMARY KEY AUTOINCREMENT, "
                 +SPELL_NAME+ " VARCHAR(255) NOT NULL,"
                 +SPELL_NIVEL+ " int(2) NOT NULL, "
-                +SPELL_CAST_TIME+ " int(255) DEFAULT NULL, "
+                +SPELL_CAST_TIME+ " varchar(255) DEFAULT NULL, "
                 +SPELL_RANGE+ " VARCHAR(255) DEFAULT NULL, "
-                +SPELL_COMPONENTS+ " VARCHAR(255) DEFAULT NULL, "
                 +SPELL_DURATION+ " VARCHAR(255) DEFAULT NULL, "
                 +SPELL_CLASSE+ " VARCHAR(255) NOT NULL, "
                 +SPELL_DESC+ " VARCHAR(255) NOT NULL "
                 + ")");
 
+
+
         //banco Personagens
         db.execSQL("CREATE TABLE IF NOT EXISTS "
                 +TABLE_CHAR+ " ( "
-                +CHAR_ID + " "+"PRIMARY KEY AUTOINCREMENT, "
+                +CHAR_ID + " "+" INTEGER PRIMARY KEY AUTOINCREMENT, "
                 +CHAR_NAME+ " VARCHAR(255) NOT NULL,"
                 +CHAR_NIVEL+ " int(2) NOT NULL, "
                 +CHAR_RACA+ " VARCHAR(255) NOT NULL, "
@@ -84,6 +80,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 +CHAR_HP+ " VARCHAR(2) NOT NULL "
                 + ")");
 
+        db.execSQL("INSERT INTO  feiticos (name,nivel,castTime,range,duration,classe,descricao) VALUES ('Enraizar',1,'instantanio', '90 feet','ate 1 minuto','druida','DESCRICAO')");
     }
 
     @Override

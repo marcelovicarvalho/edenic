@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardV"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="15dp"
@@ -90,6 +91,14 @@
                         android:layout_height="wrap_content"
                         android:text="efeito">
                     </TextView>
+                    <TextView
+                        android:id="@+id/range"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dist"
+                        android:layout_marginLeft="50dp">
+
+                    </TextView>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -99,13 +108,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Componentes:  ">
+                        android:text="Distancia:  ">
                     </TextView>
                     <TextView
-                        android:id="@+id/componentes"
+                        android:id="@+id/range"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="componentes">
+                        android:text="distancia">
                     </TextView>
                 </LinearLayout>
                 <LinearLayout

@@ -17,8 +17,6 @@ import java.util.ArrayList;
 
 public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyViewHolder> {
 
-    private static final String TAG = "ProdutoRecycler";
-
     ArrayList<String> spell_nome = new ArrayList<>();
     ArrayList<String> spell_nivel = new ArrayList<>();
     ArrayList<String> spell_cast_time = new ArrayList<>();
@@ -63,9 +61,7 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
-    }
+    public int getItemCount() {  return spell_nome.size(); }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView spell_nome;
         TextView spell_nivel;

@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,23 +12,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Feiticos extends AppCompatActivity {
-    private SQLiteDatabase db;
     final ArrayList<String> spell_nome = new ArrayList<>();
-    private static RecyclerView rv;
-    private static RecyclerView.LayoutManager mRv;
+
+//    private RecyclerView.LayoutManager mRv;
     final ArrayList<String> spell_nivel = new ArrayList<>();
     final ArrayList<String> spell_cast_time = new ArrayList<>();
     final ArrayList<String> spell_range = new ArrayList<>();
     final ArrayList<String> spell_duration = new ArrayList<>();
     final ArrayList<String> spell_classe = new ArrayList<>();
+    RecyclerView rv;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        rv.findViewById(R.id.rvtop);
-        RecyclerView.LayoutManager mRv;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feiticos);
+        RecyclerView.LayoutManager mRv;
+        rv = findViewById(R.id.rvtop);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -54,8 +53,7 @@ public class Feiticos extends AppCompatActivity {
         }
 
         FeiticosRecycler adapter = new FeiticosRecycler(this,spell_nome,spell_nivel,spell_cast_time,spell_range,spell_duration,spell_classe);
-        rv.setAdapter(adapter);
-        rv.setLayoutManager(mRv);
+        rv.
 
 
     public boolean onOptionsItemSelected(MenuItem item){

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Feiticos">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvtop"
+            android:id="@+id/rvtoper"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

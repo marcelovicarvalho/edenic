@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Feiticos extends AppCompatActivity {
     final ArrayList<String> spell_nome = new ArrayList<>();
 
-//    private RecyclerView.LayoutManager mRv;
+//       private RecyclerView.LayoutManager mRv;
     final ArrayList<String> spell_nivel = new ArrayList<>();
     final ArrayList<String> spell_cast_time = new ArrayList<>();
     final ArrayList<String> spell_range = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Feiticos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feiticos);
         RecyclerView.LayoutManager mRv;
-        rv = findViewById(R.id.rvtop);
+        rv = findViewById(R.id.rvtoper);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

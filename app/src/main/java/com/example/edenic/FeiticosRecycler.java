@@ -75,7 +75,6 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
             spell_nivel = itemView.findViewById(R.id.nivelFeitico);
             spell_cast_time = itemView.findViewById(R.id.tempo);
             spell_range = itemView.findViewById(R.id.range);
-            spell_range = itemView.findViewById(R.id.range);
             spell_classe = itemView.findViewById(R.id.classeFeitico);
             cardView = itemView.findViewById(R.id.cardV);
         }

@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openFeiticos(){
-        Intent intent = new Intent(this,Feiticos.class);
+        Intent intent = new Intent(this, Feiticos.class);
         startActivity(intent);
     }
 }

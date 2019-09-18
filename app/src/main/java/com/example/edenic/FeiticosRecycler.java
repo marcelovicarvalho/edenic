@@ -27,7 +27,7 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
     private int llLayout;
     private int layout1;
 
-    public FeiticosRecycler(Context context, ArrayList<String>spell_nome,ArrayList<String>spell_nivel,ArrayList<String>spell_cast_time,ArrayList<String>spell_range,ArrayList<String>spell_duration,ArrayList<String>spell_classe){
+    public FeiticosRecycler(Context context, ArrayList<String> spell_nome, ArrayList<String> spell_nivel, ArrayList<String> spell_cast_time, ArrayList<String> spell_range, ArrayList<String> spell_duration, ArrayList<String> spell_classe) {
         this.spell_nome = spell_nome;
         this.spell_nivel = spell_nivel;
         this.spell_cast_time = spell_cast_time;
@@ -39,13 +39,13 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        LinearLayout txt = (LinearLayout) LayoutInflater.from(viewGroup.getContext()).inflate(llLayout,viewGroup,false);
+        LinearLayout txt = (LinearLayout) LayoutInflater.from(viewGroup.getContext()).inflate(llLayout, viewGroup, false);
         FeiticosRecycler.MyViewHolder myViewHolder = new FeiticosRecycler.MyViewHolder(txt);
         return myViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final FeiticosRecycler.MyViewHolder Holder, final int i){
+    public void onBindViewHolder(@NonNull final FeiticosRecycler.MyViewHolder Holder, final int i) {
         Holder.spell_nome.setText(spell_nome.get(i));
         Holder.spell_nivel.setText(spell_nivel.get(i));
         Holder.spell_cast_time.setText(spell_cast_time.get(i));
@@ -61,7 +61,10 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
     }
 
     @Override
-    public int getItemCount() {  return spell_nome.size(); }
+    public int getItemCount() {
+        return spell_nome.size();
+    }
+
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView spell_nome;
         TextView spell_nivel;
@@ -69,6 +72,7 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
         TextView spell_range;
         TextView spell_classe;
         CardView cardView;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             spell_nome = itemView.findViewById(R.id.nomeFeitico);

@@ -25,18 +25,19 @@ public class Personagens extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    AddPersonagem();
+                AddPersonagem();
             }
         });
     }
-    public void AddPersonagem(){
+
+    public void AddPersonagem() {
         Intent intent = new Intent(this, AddPersonagem.class);
         startActivity(intent);
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id==android.R.id.home){
+        if (id == android.R.id.home) {
             this.finish();
         }
         return super.onOptionsItemSelected(item);

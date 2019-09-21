@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,10 +26,10 @@ public class AddPersonagem extends AppCompatActivity {
 
     //spinner classe
         List<String> classes =  new ArrayList<String>();
-        classes.add("Barbaro");
+        classes.add("Clerigo");
+        classes.add("Guerreiro");
         classes.add("Ladino");
         classes.add("Mago");
-        classes.add("Clerigo");
 
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, classes);
@@ -40,7 +41,13 @@ public class AddPersonagem extends AppCompatActivity {
         sItems.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                if (adapterView.getSelectedItem().equals("Clerigo")){
+                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                }
+                else if(adapterView.getSelectedItem().equals("Anão")){
+                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -77,8 +84,8 @@ public class AddPersonagem extends AppCompatActivity {
                 }
                 else if(adapterView.getSelectedItem().equals("Halfling")){
                     Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
-                    RadioButton rdb1 = findViewById(R.id.rdb1);
-                    rdb1.setEnabled(false);
+                    CheckBox atletismo = findViewById(R.id.atletismo);
+                    atletismo.setEnabled(false);
                 }
             }
 

@@ -37,61 +37,217 @@
         </Spinner>
 
     </LinearLayout>
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="2">
-
-        <RadioButton
-            android:id="@+id/rdb1"
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="teste"
-            android:layout_margin="5dp">
+            android:orientation="vertical"
+            android:layout_weight="2">
 
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/rdb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="teste2"
-            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forca"
+                android:textSize="20dp">
+            </TextView>
+            <CheckBox
+                android:id="@+id/atletismo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atletismo">
+            </CheckBox>
 
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/rdb3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="teste3"
-            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destreza"
+                android:textSize="20dp">
+            </TextView>
+            <CheckBox
+                android:id="@+id/acrobacia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acrobacia">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/furtividade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Furtividade">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/perstigitacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prestigitação">
+            </CheckBox>
 
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/rdb4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="teste4"
-            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inteligência"
+                android:textSize="20dp">
+            </TextView>
+            <CheckBox
+                android:id="@+id/arcanismo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arcanismo">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/historia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="História">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/investigacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Investigação">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/natureza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Natureza">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/religiao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Religião">
+            </CheckBox>
 
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/rdb5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="teste5"
-            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sabedoria"
+                android:textSize="20dp">
+            </TextView>
+            <CheckBox
+                android:id="@+id/adestraranimais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adestrar Animais">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/intuicao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intuição">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/medicina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicina">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/percepcao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Percepção">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/sobrevivencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sobrevivência">
+            </CheckBox>
 
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/rdb6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="teste6"
-            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carisma"
+                android:textSize="20dp">
+            </TextView>
+            <CheckBox
+                android:id="@+id/atuacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atuação">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/enganacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enganação">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/intimidacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intimidação">
+            </CheckBox>
+            <CheckBox
+                android:id="@+id/persuasao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Persuasão">
+            </CheckBox>
 
-        </RadioButton>
-    </LinearLayout>
+            <!--        <RadioGroup-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content">-->
+            <!--            <RadioButton-->
+            <!--                android:id="@+id/rdb1"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="teste"-->
+            <!--                android:layout_margin="5dp">-->
+
+            <!--            </RadioButton>-->
+            <!--            <RadioButton-->
+            <!--                android:id="@+id/rdb2"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="teste2"-->
+            <!--                android:layout_margin="5dp">-->
+
+            <!--            </RadioButton>-->
+            <!--            <RadioButton-->
+            <!--                android:id="@+id/rdb3"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="teste3"-->
+            <!--                android:layout_margin="5dp">-->
+
+            <!--            </RadioButton>-->
+            <!--            <RadioButton-->
+            <!--                android:id="@+id/rdb4"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="teste4"-->
+            <!--                android:layout_margin="5dp">-->
+
+            <!--            </RadioButton>-->
+            <!--            <RadioButton-->
+            <!--                android:id="@+id/rdb5"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="teste5"-->
+            <!--                android:layout_margin="5dp">-->
+
+            <!--            </RadioButton>-->
+            <!--            <RadioButton-->
+            <!--                android:id="@+id/rdb6"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="teste6"-->
+            <!--                android:layout_margin="5dp">-->
+
+            <!--            </RadioButton>-->
+            <!--        </RadioGroup>-->
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
 
 </LinearLayout>

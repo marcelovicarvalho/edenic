@@ -72,63 +72,66 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="197dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_gravity="center"
-                android:layout_marginTop="14dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="13.5dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_weight="2">
+                android:layout_weight="2"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Efeito:  ">
-                    </TextView>
+                        android:text="Efeito:  "></TextView>
+
                     <TextView
                         android:id="@+id/efeito"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="efeito">
-                    </TextView>
+                        android:text="efeito"></TextView>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Distancia:  ">
-                    </TextView>
+                        android:text="Distancia:  "></TextView>
+
                     <TextView
                         android:id="@+id/range"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="distancia">
-                    </TextView>
+                        android:text="distancia"></TextView>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tempo de usar:  ">
-                    </TextView>
+                        android:text="Tempo de usar:  "></TextView>
+
                     <TextView
                         android:id="@+id/tempo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="tempo">
-                    </TextView>
+                        android:text="tempo"></TextView>
                 </LinearLayout>
             </LinearLayout>
 

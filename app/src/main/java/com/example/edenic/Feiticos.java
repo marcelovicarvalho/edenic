@@ -25,8 +25,6 @@ public class Feiticos extends AppCompatActivity {
     RecyclerView rv;
     RecyclerView.LayoutManager mRv;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +42,6 @@ public class Feiticos extends AppCompatActivity {
         DatabaseHandler banco = new DatabaseHandler(this);
         SQLiteDatabase db = banco.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from feiticos", new String[]{});
-
 
         cursor.moveToFirst();
         do {

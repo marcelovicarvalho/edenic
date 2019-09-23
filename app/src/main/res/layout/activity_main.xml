@@ -28,18 +28,36 @@
             app:cardCornerRadius="10dp"
             app:cardElevation="3dp"
             android:layout_margin="20dp">
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_gravity="center">
-                <TextView
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/character3"
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Personagens"
-                    android:layout_marginLeft="100dp"
-                    android:fontFamily="sans-serif-thin"
-                    android:textSize="20dp"/>
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personagens"
+                        android:layout_marginLeft="100dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -53,19 +71,37 @@
             app:cardCornerRadius="10dp"
             app:cardElevation="3dp"
             android:layout_margin="20dp">
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_gravity="center">
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Feitiços"
-                    android:layout_marginLeft="100dp"
-                    android:fontFamily="sans-serif-thin"
-                    android:textSize="20dp"/>
+                    android:gravity="left">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/spells"
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feitiços"
+                        android:layout_marginLeft="100dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
             </LinearLayout>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -78,18 +114,34 @@
             app:cardElevation="3dp"
             android:layout_margin="20dp">
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_gravity="center">
-                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/monster" />
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="n sei ainda oq vai se"
-                    android:layout_marginLeft="100dp"
-                    android:fontFamily="sans-serif-thin"
-                    android:textSize="20dp"/>
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Em breve!"
+                        android:layout_marginLeft="100dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
             </LinearLayout>
+
 
         </androidx.cardview.widget.CardView>
 

@@ -21,11 +21,8 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
     ArrayList<String> spell_nivel = new ArrayList<>();
     ArrayList<String> spell_cast_time = new ArrayList<>();
     ArrayList<String> spell_range = new ArrayList<>();
-    final ArrayList<String> spell_components = new ArrayList<>();
     ArrayList<String> spell_duration = new ArrayList<>();
     ArrayList<String> spell_classe = new ArrayList<>();
-    private int llLayout;
-    private int layout1;
 
     public FeiticosRecycler(Context context, ArrayList<String> spell_nome, ArrayList<String> spell_nivel, ArrayList<String> spell_cast_time, ArrayList<String> spell_range, ArrayList<String> spell_duration, ArrayList<String> spell_classe) {
         this.spell_nome = spell_nome;
@@ -39,7 +36,7 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        LinearLayout txt = (LinearLayout) LayoutInflater.from(viewGroup.getContext()).inflate(llLayout, viewGroup, false);
+        LinearLayout txt = (LinearLayout) LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_feiticos, viewGroup, false);
         FeiticosRecycler.MyViewHolder myViewHolder = new FeiticosRecycler.MyViewHolder(txt);
         return myViewHolder;
     }

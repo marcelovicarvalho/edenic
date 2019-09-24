@@ -210,18 +210,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="60dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="5dp">
-                <NumberPicker
-                    android:id="@+id/forca"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </NumberPicker>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -229,6 +224,11 @@
                     android:textSize="15dp"
                     android:layout_gravity="center">
                 </TextView>
+                <NumberPicker
+                    android:id="@+id/forca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </NumberPicker>
             </LinearLayout>
 
             <LinearLayout
@@ -236,11 +236,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="5dp">
-                <NumberPicker
-                    android:id="@+id/destreza"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </NumberPicker>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -248,18 +243,19 @@
                     android:textSize="15dp"
                     android:layout_gravity="center">
                 </TextView>
+                <NumberPicker
+                    android:id="@+id/destreza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </NumberPicker>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_margin="5dp">
-                <NumberPicker
-                    android:id="@+id/inteligencia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </NumberPicker>
+                android:layout_margin="5dp"
+                android:gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -267,6 +263,11 @@
                     android:textSize="15dp"
                     android:layout_gravity="center">
                 </TextView>
+                <NumberPicker
+                    android:id="@+id/inteligencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </NumberPicker>
             </LinearLayout>
 
             <LinearLayout
@@ -274,11 +275,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="5dp">
-                <NumberPicker
-                    android:id="@+id/sabedoria"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </NumberPicker>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -286,6 +282,11 @@
                     android:textSize="15dp"
                     android:layout_gravity="center">
                 </TextView>
+                <NumberPicker
+                    android:id="@+id/sabedoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </NumberPicker>
             </LinearLayout>
 
             <LinearLayout
@@ -293,11 +294,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="5dp">
-                <NumberPicker
-                    android:id="@+id/carisma"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </NumberPicker>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -305,6 +301,11 @@
                     android:textSize="15dp"
                     android:layout_gravity="center">
                 </TextView>
+                <NumberPicker
+                    android:id="@+id/carisma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </NumberPicker>
             </LinearLayout>
 
         </LinearLayout>

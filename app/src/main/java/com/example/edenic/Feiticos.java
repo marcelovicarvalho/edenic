@@ -51,7 +51,6 @@ public class Feiticos extends AppCompatActivity {
             spell_range.add(cursor.getString(4));
             spell_duration.add(cursor.getString(5));
             spell_classe.add(cursor.getString(6));
-            Toast.makeText(Feiticos.this, spell_cast_time.toString(), Toast.LENGTH_SHORT).show();
         } while (cursor.moveToNext());
         FeiticosRecycler adapter = new FeiticosRecycler(this, spell_nome, spell_nivel, spell_cast_time, spell_range, spell_duration, spell_classe);
         rv.setAdapter(adapter);

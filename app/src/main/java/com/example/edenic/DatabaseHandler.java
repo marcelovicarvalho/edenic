@@ -81,6 +81,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + ")");
 
         db.execSQL("INSERT INTO  feiticos (name,nivel,castTime,range,duration,classe,descricao) VALUES ('Enraizar',1,'instantanio', '90 feet','ate 1 minuto','druida','DESCRICAO')");
+        db.execSQL("INSERT INTO  feiticos (name,nivel,castTime,range,duration,classe,descricao) VALUES ('Mãos Flamejantes',1,'instantanio', '4.5 metros','instantaneo','Clérigo','DESCRICAO2')");
     }
 
     @Override

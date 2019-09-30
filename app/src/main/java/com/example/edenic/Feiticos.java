@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Feiticos extends AppCompatActivity {
@@ -40,6 +41,39 @@ public class Feiticos extends AppCompatActivity {
         rv = findViewById(R.id.rvtoper);
 
         setAdapter();
+        
+        //spn sort
+        
+        String [] spnSort = new String[]{"Alfabético","Classe","Nível"};
+        Spinner spinner = (Spinner) findViewById(R.id.spnSort);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,spnSort);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (adapter.equals("Aflabpetico")){
+                    Collections.sort(spell_nome);
+                    Toast.makeText(Feiticos.this, "top", Toast.LENGTH_SHORT).show();
+                }
+                else if(adapter.equals("Classe")){
+                    Collections.sort(spell_classe);
+                    Toast.makeText(Feiticos.this, "top2", Toast.LENGTH_SHORT).show();
+                }
+                else if(adapter.equals("Nível")){
+                    Collections.sort(spell_nivel);
+                    Toast.makeText(Feiticos.this, "top3", Toast.LENGTH_SHORT).show();
+                }
+            }
+    
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+        
+            }
+        });
+        
+        //spn sort
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

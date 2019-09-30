@@ -5,6 +5,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 //import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,16 +16,19 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Feiticos extends AppCompatActivity {
-    final ArrayList<String> spell_nome = new ArrayList<>();
 
     //       private RecyclerView.LayoutManager mRv;
+    final ArrayList<String> spell_nome = new ArrayList<>();
     final ArrayList<String> spell_nivel = new ArrayList<>();
     final ArrayList<String> spell_cast_time = new ArrayList<>();
     final ArrayList<String> spell_range = new ArrayList<>();
     final ArrayList<String> spell_duration = new ArrayList<>();
     final ArrayList<String> spell_classe = new ArrayList<>();
+    final ArrayList<String> spell_desc = new ArrayList<>();
+    
     RecyclerView rv;
     RecyclerView.LayoutManager mRv;
 
@@ -51,8 +58,9 @@ public class Feiticos extends AppCompatActivity {
             spell_range.add(cursor.getString(4));
             spell_duration.add(cursor.getString(5));
             spell_classe.add(cursor.getString(6));
+            spell_desc.add(cursor.getString(7));
         } while (cursor.moveToNext());
-        FeiticosRecycler adapter = new FeiticosRecycler(this, spell_nome, spell_nivel, spell_cast_time, spell_range, spell_duration, spell_classe);
+        FeiticosRecycler adapter = new FeiticosRecycler(this, spell_nome, spell_nivel, spell_cast_time, spell_range, spell_duration, spell_classe, spell_desc);
         rv.setAdapter(adapter);
         mRv = new GridLayoutManager(this.getBaseContext(), 1);
         rv.setLayoutManager(mRv);

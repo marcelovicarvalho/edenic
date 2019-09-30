@@ -32,7 +32,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:text="nomeFeitico"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+                </TextView>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -43,13 +44,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nivel:  "></TextView>
+                        android:text="Nivel:  ">
+                    </TextView>
 
                     <TextView
                         android:id="@+id/nivelFeitico"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="nivel"></TextView>
+                        android:text="nivel">
+                    </TextView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -60,13 +63,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Classe:  "></TextView>
+                        android:text="Classe:  ">
+                    </TextView>
 
                     <TextView
                         android:id="@+id/classeFeitico"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="classe"></TextView>
+                        android:text="classe">
+                    </TextView>
                 </LinearLayout>
 
 
@@ -79,7 +84,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="2"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="right">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -89,13 +94,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Efeito:  "></TextView>
+                        android:text="Duração:  ">
+                    </TextView>
 
                     <TextView
-                        android:id="@+id/alcance"
+                        android:id="@+id/duracao"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="efeito"></TextView>
+                        android:text="efeito">
+                    </TextView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -107,13 +114,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Distancia:  "></TextView>
+                        android:text="Distancia:  ">
+                    </TextView>
 
                     <TextView
                         android:id="@+id/range"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="distancia"></TextView>
+                        android:text="distancia">
+                    </TextView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -124,13 +133,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tempo de usar:  "></TextView>
+                        android:text="Tempo de usar:  ">
+                    </TextView>
 
                     <TextView
                         android:id="@+id/tempo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="tempo"></TextView>
+                        android:text="tempo">
+                    </TextView>
                 </LinearLayout>
             </LinearLayout>
 

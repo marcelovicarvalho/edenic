@@ -2,6 +2,8 @@ package com.example.edenic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,7 +21,8 @@ import java.util.List;
 import static android.view.View.GONE;
 
 public class AddPersonagem extends AppCompatActivity {
-
+    
+    int HP = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class AddPersonagem extends AppCompatActivity {
         final CheckBox investigacao = findViewById(R.id.investigacao);
         final CheckBox natureza = findViewById(R.id.natureza);
         final CheckBox religiao = findViewById(R.id.religiao);
+        
 
     //sabedoria
         final CheckBox adestraranimais = findViewById(R.id.adestraranimais);
@@ -130,6 +134,7 @@ public class AddPersonagem extends AppCompatActivity {
                 else if(adapterView.getSelectedItem().equals("Guerreiro")){
                     Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     resetaBotoes();
+                    HP = HP + 10;
                     acrobacia.setEnabled(true);
                     adestraranimais.setEnabled(true);
                     atletismo.setEnabled(true);
@@ -142,6 +147,7 @@ public class AddPersonagem extends AppCompatActivity {
                 else if(adapterView.getSelectedItem().equals("Ladino")){
                     Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     resetaBotoes();
+                    HP = HP + 8;
                     acrobacia.setEnabled(true);
                     atletismo.setEnabled(true);
                     atuacao.setEnabled(true);
@@ -154,6 +160,7 @@ public class AddPersonagem extends AppCompatActivity {
                 else if(adapterView.getSelectedItem().equals("Mago")){
                     Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     resetaBotoes();
+                    HP = HP + 6;
                     arcanismo.setEnabled(true);
                     historia.setEnabled(true);
                     intuicao.setEnabled(true);
@@ -272,10 +279,31 @@ public class AddPersonagem extends AppCompatActivity {
         salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Pega o valor do spinner para enviar pro db local
+                Spinner spnClasse = view.findViewById(R.id.spnClasse);
+                Spinner spnRaca = view.findViewById(R.id.spnRaca);
+                Spinner spnBackground = view.findViewById(R.id.spnBackground);
+                
+                //Pega os checkbox pra envia pro serividor
+                
+                String classe = spnClasse.getSelectedItem().toString();
+                
+                
+                gravaBanco(getBaseContext()).execSQL("");
                 Toast.makeText(AddPersonagem.this, "Personagem Salvo", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
+    }
+    
+    private SQLiteDatabase gravaBanco(Context context){
+        DatabaseHandler banco = new DatabaseHandler(context);
+        SQLiteDatabase db = banco.getWritableDatabase();
+        return db;
+    }
+    
+    private void enviarInformacoes(){
+    
     }
 
     private void resetaBotoes(){

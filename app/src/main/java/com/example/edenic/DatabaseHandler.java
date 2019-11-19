@@ -15,10 +15,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //database name
     private static final String DATABASE_SPELL = "feiticos.db";
     private static final String DATABASE_CHAR = "personagens.db";
+    private static final String DATABASE_PROF = "proficiencia.db";
 
     //Table name
     private static final String TABLE_SPELLS = "feiticos";
     private static final String TABLE_CHAR = "personagens";
+    private static final String TABLE_PROF = "proficiencias";
 
     //table feiticos fields
     private static final String SPELL_ID = "id";
@@ -44,8 +46,30 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String CHAR_WIS = "char_wis";
     private static final String CHAR_CHAR = "char_char";
     private static final String CHAR_HP = "char_hp";
+    private static final String CHAR_DESC = "char_desc";
 
-    @Override
+    //table personagens fields
+    private static final String PROF_ID = "prof_id";
+    private static final String PROF_ATL = "prof_atl";
+    private static final String PROF_ACR = "prof_acr";
+    private static final String PROF_FURT = "prof_furt";
+    private static final String PROF_PREST = "prof_prest";
+    private static final String PROF_ARC = "prof_arc";
+    private static final String PROF_HIS = "prof_his";
+    private static final String PROF_INVES = "prof_inves";
+    private static final String PROF_NATU = "prof_natu";
+    private static final String PROF_RELI = "prof_reli";
+    private static final String PROF_ADES = "prof_ades";
+    private static final String PROF_INTUI = "prof_intui";
+    private static final String PROF_MEDIC = "prof_medic";
+    private static final String PROF_PERCEP = "prof_percep";
+    private static final String PROF_SOBRE = "prof_sobre";
+    private static final String PROF_ATUA = "prof_atua";
+    private static final String PROF_ENGANA = "prof_engana";
+    private static final String PROF_INTI = "prof_inti";
+    private static final String PROF_PERSU = "prof_persu";
+
+@Override
     public void onCreate(SQLiteDatabase db) {
         //banco feiticos
         db.execSQL("CREATE TABLE IF NOT EXISTS "
@@ -70,14 +94,42 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 +CHAR_NIVEL+ " int(2) NOT NULL, "
                 +CHAR_RACA+ " VARCHAR(255) NOT NULL, "
                 +CHAR_CLASS+ " VARCHAR(255) NOT NULL, "
-                +CHAR_BACK+ " VARCHAR(255) DEFAULT NULL, "
+                +CHAR_BACK+ " VARCHAR(255) NOT NULL, "
                 +CHAR_STR+ " int(2) NOT NULL, "
                 +CHAR_DEX+ " int(2) NOT NULL, "
                 +CHAR_CONS+ " int(2) NOT NULL, "
                 +CHAR_INT+ " int2(2) NOT NULL, "
                 +CHAR_WIS+ " int(2) NOT NULL, "
-                +CHAR_CHAR+ " VARCHAR(255) DEFAULT NULL, "
-                +CHAR_HP+ " VARCHAR(2) NOT NULL "
+                +CHAR_CHAR+ " int(2) NOT NULL, "
+                +CHAR_HP+ " int(2) NOT NULL, "
+                +CHAR_DESC+ " VARCHAR(255) DEFAULT NULL"
+                + ")");
+    
+    
+    
+        //banco Personagens
+        db.execSQL("CREATE TABLE IF NOT EXISTS "
+                +TABLE_PROF+ " ( "
+                +PROF_ID + " "+" INTEGER PRIMARY KEY AUTOINCREMENT, "
+                +PROF_ATL+ " int(3) NOT NULL,"
+                +PROF_ACR+ " int(3) NOT NULL,"
+                +PROF_FURT+ " int(3) NOT NULL,"
+                +PROF_PREST+ " int(3) NOT NULL,"
+                +PROF_ARC+ " int(3) NOT NULL,"
+                +PROF_HIS+ " int(3) NOT NULL,"
+                +PROF_INVES+ " int(3) NOT NULL,"
+                +PROF_NATU+ " int(3) NOT NULL,"
+                +PROF_RELI+ " int(3) NOT NULL,"
+                +PROF_ADES+ " int(3) NOT NULL,"
+                +PROF_INTUI+ " int(3) NOT NULL,"
+                +PROF_MEDIC+ " int(3) NOT NULL,"
+                +PROF_PERCEP+ " int(3) NOT NULL,"
+                +PROF_SOBRE+ " int(3) NOT NULL,"
+                +PROF_ATUA+ " int(3) NOT NULL,"
+                +PROF_ENGANA+ " int(3) NOT NULL,"
+                +PROF_INTI+ " int(3) NOT NULL,"
+                +PROF_PERSU+ " int(3) NOT NULL,"
+                +CHAR_DESC+ " VARCHAR(255) DEFAULT NULL"
                 + ")");
                     //                                                                                  Nome,nivel,cast time, range, duracao, classe, descrição
         db.execSQL("INSERT INTO  feiticos (name,nivel,castTime,range,duration,classe,descricao) VALUES ('Consertar',0,'1 minuto', 'Toque','instantaneo','Clérigo',' Essa magia repara um única quebra ou fissura em um objeto que você tocar, como um elo quebrado de uma corrente, duas metades de uma chave partida, um manto rasgado ou o vazamento em um odre. Contanto que a quebra ou fissura não tenha mais de 30 centímetros em qualquer dimensão, você pode remenda-la, não deixando qualquer vestígio do dano anterior. Essa magia pode reparar fisicamente um item mágico ou constructo, mas a magia não irá restaurar a magia em tais objetos.')");

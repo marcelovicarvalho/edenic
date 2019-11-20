@@ -25,7 +25,7 @@ protected void onCreate(Bundle savedInstanceState) {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         }
-    }, 2500);
+    }, 1750);
     
 }
 }

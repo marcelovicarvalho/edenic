@@ -128,8 +128,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 +PROF_ATUA+ " int(3) NOT NULL,"
                 +PROF_ENGANA+ " int(3) NOT NULL,"
                 +PROF_INTI+ " int(3) NOT NULL,"
-                +PROF_PERSU+ " int(3) NOT NULL,"
-                +CHAR_DESC+ " VARCHAR(255) DEFAULT NULL"
+                +PROF_PERSU+ " int(3) NOT NULL"
                 + ")");
                     //                                                                                  Nome,nivel,cast time, range, duracao, classe, descrição
         db.execSQL("INSERT INTO  feiticos (name,nivel,castTime,range,duration,classe,descricao) VALUES ('Consertar',0,'1 minuto', 'Toque','instantaneo','Clérigo',' Essa magia repara um única quebra ou fissura em um objeto que você tocar, como um elo quebrado de uma corrente, duas metades de uma chave partida, um manto rasgado ou o vazamento em um odre. Contanto que a quebra ou fissura não tenha mais de 30 centímetros em qualquer dimensão, você pode remenda-la, não deixando qualquer vestígio do dano anterior. Essa magia pode reparar fisicamente um item mágico ou constructo, mas a magia não irá restaurar a magia em tais objetos.')");

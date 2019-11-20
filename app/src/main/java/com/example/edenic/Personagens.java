@@ -31,7 +31,7 @@ public class Personagens extends AppCompatActivity {
     }
 
     public void AddPersonagem() {
-        Intent intent = new Intent(this, AddPersonagem.class);
+        Intent intent = new Intent(Personagens.this, AddPersonagem.class);
         startActivity(intent);
     }
 

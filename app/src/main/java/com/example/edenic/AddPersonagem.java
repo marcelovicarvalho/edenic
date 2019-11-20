@@ -1,5 +1,6 @@
 package com.example.edenic;
 
+import androidx.annotation.ArrayRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -23,7 +24,17 @@ import static android.view.View.GONE;
 public class AddPersonagem extends AppCompatActivity {
     
     int HP = 0;
-
+    String classe, raca, background;
+    
+    ArrayList<Integer> checkForca = new ArrayList<>();
+    ArrayList<Integer> checkDestreza = new ArrayList<>();
+    ArrayList<Integer> checkInteligencia = new ArrayList<>();
+    ArrayList<Integer> checkSabedoria = new ArrayList<>();
+    ArrayList<Integer> checkCarisma = new ArrayList<>();
+    
+    
+    
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -279,21 +290,35 @@ public class AddPersonagem extends AppCompatActivity {
         salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                
                 //Pega o valor do spinner para enviar pro db local
-                Spinner spnClasse = view.findViewById(R.id.spnClasse);
-                Spinner spnRaca = view.findViewById(R.id.spnRaca);
-                Spinner spnBackground = view.findViewById(R.id.spnBackground);
+                String classe = ((Spinner) findViewById(R.id.spnClasse)).getSelectedItem().toString();
+                String raca = ((Spinner) findViewById(R.id.spnRaca)).getSelectedItem().toString();
+                String background = ((Spinner) findViewById(R.id.spnBackground)).getSelectedItem().toString();
+                
+                //Pega o valor do number picker
+                int forca = ((NumberPicker) findViewById(R.id.forca)).getValue();
+                int destreza = ((NumberPicker) findViewById(R.id.destreza)).getValue();
+                int inteligencia = ((NumberPicker) findViewById(R.id.inteligencia)).getValue();
+                int sabedoria = ((NumberPicker) findViewById(R.id.sabedoria)).getValue();
+                int carisma = ((NumberPicker) findViewById(R.id.carisma)).getValue();
                 
                 //Pega os checkbox pra envia pro serividor
                 
-                String classe = spnClasse.getSelectedItem().toString();
                 
                 
-                gravaBanco(getBaseContext()).execSQL("");
+//                gravaBanco(getBaseContext()).execSQL("");
+                
+                
                 Toast.makeText(AddPersonagem.this, "Personagem Salvo", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
+    }
+    
+    private void itemSelecionado(View view){
+        boolean checked = ((CheckBox) view).isChecked();
+        
     }
     
     private SQLiteDatabase gravaBanco(Context context){

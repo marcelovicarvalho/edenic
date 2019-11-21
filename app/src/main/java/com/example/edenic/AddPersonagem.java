@@ -364,7 +364,7 @@ public class AddPersonagem extends AppCompatActivity {
                         break;
                         
                     case "Halfling":
-                        destreza = destreza2 + 2;
+                        destreza = destreza + 2;
                         destreza2 = modificadorStatus(destreza);
                         break;
                         
@@ -514,6 +514,8 @@ public class AddPersonagem extends AppCompatActivity {
         final CheckBox enganacao = findViewById(R.id.enganacao);
         final CheckBox intimidacao = findViewById(R.id.intimidacao);
         final CheckBox persuasao = findViewById(R.id.persuasao);
+        
+        // NAO ESTA PASSANDO O VALOR CORRETO PELA (retonarModStatus)
         
         //forca
         if (atletismo.isChecked()){

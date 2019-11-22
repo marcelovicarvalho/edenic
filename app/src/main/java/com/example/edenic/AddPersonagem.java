@@ -369,7 +369,7 @@ public class AddPersonagem extends AppCompatActivity {
                         prestigitacao2 = somaStatus;
     
                         constituicao2 = modificadorStatus(constituicao);
-                        HP = HP + somaStatus;
+                        calculaHP(classe);
     
                         inteligencia2 = modificadorStatus(inteligencia);
                         arcanismo2 = somaStatus;
@@ -412,7 +412,10 @@ public class AddPersonagem extends AppCompatActivity {
                         prestigitacao2 = somaStatus;
     
                         constituicao2 = modificadorStatus(constituicao);
-                        HP = HP + somaStatus;
+                        Log.i("PRIMEIRO", String.valueOf(HP));
+                        Log.i("CONSTITUICAO",String.valueOf(somaStatus));
+                        calculaHP(classe);
+                        Log.i("",String.valueOf(HP));
     
                         inteligencia2 = modificadorStatus(inteligencia);
                         arcanismo2 = somaStatus;
@@ -455,7 +458,7 @@ public class AddPersonagem extends AppCompatActivity {
                         prestigitacao2 = somaStatus;
     
                         constituicao2 = modificadorStatus(constituicao);
-                        HP = HP + somaStatus;
+                        calculaHP(classe);
     
                         inteligencia2 = modificadorStatus(inteligencia);
                         arcanismo2 = somaStatus;
@@ -497,7 +500,7 @@ public class AddPersonagem extends AppCompatActivity {
                         prestigitacao2 = somaStatus;
                         
                         constituicao2 = modificadorStatus(constituicao);
-                        HP = HP + somaStatus;
+                        calculaHP(classe);
                         
                         inteligencia2 = modificadorStatus(inteligencia);
                         arcanismo2 = somaStatus;
@@ -533,20 +536,22 @@ public class AddPersonagem extends AppCompatActivity {
         });
     }
     
-    private int calculaHP(int HP){
-        int HP2 = 0;
+    private String calculaHP(String classe){
         switch (classe){
             case "Clerigo":
-                HP2 = 8 + constituicao2;
+                HP = 8 + somaStatus;
                 break;
             case "Guerreiro":
+                HP = 10 + somaStatus;
                 break;
             case "Ladino":
+                HP = 8 + somaStatus;
                 break;
             case "Mago":
+                HP = 6 + somaStatus;
                 break;
         }
-        return HP2;
+        return String.valueOf(HP);
     }
     
     private int modificadorStatus(int status){

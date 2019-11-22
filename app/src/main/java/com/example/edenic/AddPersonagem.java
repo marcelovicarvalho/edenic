@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -333,6 +334,7 @@ public class AddPersonagem extends AppCompatActivity {
             public void onClick(View view) {
                 
                 //Pega o valor do spinner para enviar pro db local
+                String nome = ((EditText) findViewById(R.id.nomepersonagem)).getText().toString();
                 String classe = ((Spinner) findViewById(R.id.spnClasse)).getSelectedItem().toString();
                 String raca = ((Spinner) findViewById(R.id.spnRaca)).getSelectedItem().toString();
                 String background = ((Spinner) findViewById(R.id.spnBackground)).getSelectedItem().toString();
@@ -344,59 +346,187 @@ public class AddPersonagem extends AppCompatActivity {
                 int inteligencia = ((NumberPicker) findViewById(R.id.inteligencia)).getValue();
                 int sabedoria = ((NumberPicker) findViewById(R.id.sabedoria)).getValue();
                 int carisma = ((NumberPicker) findViewById(R.id.carisma)).getValue();
-                Log.i("Forca 1", String.valueOf(forca));
-                Log.i("Destreza 1", String.valueOf(destreza));
-                Log.i("Constituicao 1", String.valueOf(constituicao));
-                Log.i("Inteligencia 1", String.valueOf(inteligencia));
-                Log.i("Sabedoria 1", String.valueOf(sabedoria));
-                Log.i("Carisma 1", String.valueOf(carisma));
+                
                 //
                 
                 switch (raca){
                     case "Anão":
                         constituicao = constituicao + 2;
+                        
+                        forca2 = forca;
+                        destreza2 = destreza;
                         constituicao2 = modificadorStatus(constituicao);
+                        inteligencia2 = inteligencia;
+                        sabedoria2 = sabedoria;
+                        carisma2 = carisma;
+    
+                        modificadorStatus(forca);
+                        atletismo2 = somaStatus;
+    
+                        destreza2 = modificadorStatus(destreza);
+                        acrobacia2 = somaStatus;
+                        furtividade2 = somaStatus;
+                        prestigitacao2 = somaStatus;
+    
+                        constituicao2 = modificadorStatus(constituicao);
+                        HP = HP + somaStatus;
+    
+                        inteligencia2 = modificadorStatus(inteligencia);
+                        arcanismo2 = somaStatus;
+                        historia2 = somaStatus;
+                        investigacao2 = somaStatus;
+                        natureza2 = somaStatus;
+                        religiao2 = somaStatus;
+    
+                        sabedoria2 = modificadorStatus(sabedoria);
+                        adestraranimais2 = somaStatus;
+                        intuicao2 = somaStatus;
+                        medicina2 = somaStatus;
+                        percepcao2 = somaStatus;
+                        sobrevivencia2 = somaStatus;
+    
+                        carisma2 = modificadorStatus(carisma);
+                        atuacao2 = somaStatus;
+                        enganacao2 = somaStatus;
+                        intimidacao2 = somaStatus;
+                        persuasao2 = somaStatus;
+                        
                         break;
                         
                     case "Elfo":
                         destreza = destreza + 2;
+                        
+                        forca2 = forca;
                         destreza2 = modificadorStatus(destreza);
+                        constituicao2 = constituicao;
+                        inteligencia2 = inteligencia;
+                        sabedoria2 = sabedoria;
+                        carisma2 = sabedoria;
+    
+                        modificadorStatus(forca);
+                        atletismo2 = somaStatus;
+    
+                        destreza2 = modificadorStatus(destreza);
+                        acrobacia2 = somaStatus;
+                        furtividade2 = somaStatus;
+                        prestigitacao2 = somaStatus;
+    
+                        constituicao2 = modificadorStatus(constituicao);
+                        HP = HP + somaStatus;
+    
+                        inteligencia2 = modificadorStatus(inteligencia);
+                        arcanismo2 = somaStatus;
+                        historia2 = somaStatus;
+                        investigacao2 = somaStatus;
+                        natureza2 = somaStatus;
+                        religiao2 = somaStatus;
+    
+                        sabedoria2 = modificadorStatus(sabedoria);
+                        adestraranimais2 = somaStatus;
+                        intuicao2 = somaStatus;
+                        medicina2 = somaStatus;
+                        percepcao2 = somaStatus;
+                        sobrevivencia2 = somaStatus;
+    
+                        carisma2 = modificadorStatus(carisma);
+                        atuacao2 = somaStatus;
+                        enganacao2 = somaStatus;
+                        intimidacao2 = somaStatus;
+                        persuasao2 = somaStatus;
+                        
                         break;
                         
                     case "Halfling":
                         destreza = destreza + 2;
+                        
+                        forca2 = forca;
                         destreza2 = modificadorStatus(destreza);
+                        constituicao2 = constituicao;
+                        inteligencia2 = inteligencia;
+                        sabedoria2 = sabedoria;
+                        carisma2 = sabedoria;
+    
+                        modificadorStatus(forca);
+                        atletismo2 = somaStatus;
+    
+                        destreza2 = modificadorStatus(destreza);
+                        acrobacia2 = somaStatus;
+                        furtividade2 = somaStatus;
+                        prestigitacao2 = somaStatus;
+    
+                        constituicao2 = modificadorStatus(constituicao);
+                        HP = HP + somaStatus;
+    
+                        inteligencia2 = modificadorStatus(inteligencia);
+                        arcanismo2 = somaStatus;
+                        historia2 = somaStatus;
+                        investigacao2 = somaStatus;
+                        natureza2 = somaStatus;
+                        religiao2 = somaStatus;
+    
+                        sabedoria2 = modificadorStatus(sabedoria);
+                        adestraranimais2 = somaStatus;
+                        intuicao2 = somaStatus;
+                        medicina2 = somaStatus;
+                        percepcao2 = somaStatus;
+                        sobrevivencia2 = somaStatus;
+    
+                        carisma2 = modificadorStatus(carisma);
+                        atuacao2 = somaStatus;
+                        enganacao2 = somaStatus;
+                        intimidacao2 = somaStatus;
+                        persuasao2 = somaStatus;
+                        
                         break;
                         
                     case "Humano":
+    
                         forca = forca + 1;
-                        Log.i("Forca humano", String.valueOf(forca));
                         destreza = destreza + 1;
                         constituicao = constituicao + 1;
                         inteligencia = inteligencia + 1;
                         sabedoria = sabedoria + 1;
                         carisma = carisma + 1;
                         
-                        forca2 = modificadorStatus(forca);
+                        modificadorStatus(forca);
+                        atletismo2 = somaStatus;
+                        
                         destreza2 = modificadorStatus(destreza);
+                        acrobacia2 = somaStatus;
+                        furtividade2 = somaStatus;
+                        prestigitacao2 = somaStatus;
+                        
                         constituicao2 = modificadorStatus(constituicao);
+                        HP = HP + somaStatus;
+                        
                         inteligencia2 = modificadorStatus(inteligencia);
+                        arcanismo2 = somaStatus;
+                        historia2 = somaStatus;
+                        investigacao2 = somaStatus;
+                        natureza2 = somaStatus;
+                        religiao2 = somaStatus;
+                        
+                        sabedoria2 = modificadorStatus(sabedoria);
+                        adestraranimais2 = somaStatus;
+                        intuicao2 = somaStatus;
+                        medicina2 = somaStatus;
+                        percepcao2 = somaStatus;
+                        sobrevivencia2 = somaStatus;
+                        
                         carisma2 = modificadorStatus(carisma);
+                        atuacao2 = somaStatus;
+                        enganacao2 = somaStatus;
+                        intimidacao2 = somaStatus;
+                        persuasao2 = somaStatus;
+                        
                         break;
                 }
-    
+                
                 itemSelecionado();
-                Log.i("acrobacia 1", String.valueOf(acrobacia2));
-                Log.i("atuacao 1", String.valueOf(atuacao2));
-                Log.i("percepcao 1", String.valueOf(percepcao2));
-                Log.i("atuacao 1", String.valueOf(atuacao2));
-                Log.i("enganacao 1", String.valueOf(enganacao2));
-                Log.i("intimidacao 1", String.valueOf(intimidacao2));
-                Log.i("persuasao 1", String.valueOf(persuasao2));
-                
-                //Pega os checkbox pra envia pro servidor
                 
                 
+                
+                gravaBanco(getBaseContext()).execSQL("INSERT INTO");
                 
 //                gravaBanco(getBaseContext()).execSQL("");
                 
@@ -404,6 +534,22 @@ public class AddPersonagem extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    
+    private int calculaHP(int HP){
+        int HP2 = 0;
+        switch (classe){
+            case "Clerigo":
+                HP2 = 8 + constituicao2;
+                break;
+            case "Guerreiro":
+                break;
+            case "Ladino":
+                break;
+            case "Mago":
+                break;
+        }
+        return HP2;
     }
     
     private int modificadorStatus(int status){
@@ -454,42 +600,6 @@ public class AddPersonagem extends AppCompatActivity {
         }
         return status2;
     }
-    private int retonarModStatus(int status){
-        if(status == 1){
-            return -5;
-        }
-        else if(status == 2 || status == 3){
-            return -4;
-        }
-        else if(status == 4 || status == 5){
-            return -3;
-        }
-        else if(status == 6 || status == 7){
-            return -2;
-        }
-        else if(status == 8 || status == 9){
-            return -1;
-        }
-        else if(status == 10 || status == 11){
-            return 0;
-        }
-        else if(status == 12 || status == 13){
-            return 1;
-        }
-        else if(status == 14 || status == 15){
-            return 2;
-        }
-        else if(status == 16 || status == 17){
-            return 3;
-        }
-        else if(status == 18 || status == 19){
-            return 4;
-        }
-        else if(status == 20){
-            return 5;
-        }
-        return 0;
-    }
     
     private void itemSelecionado(){
         final CheckBox atletismo = findViewById(R.id.atletismo);
@@ -519,65 +629,65 @@ public class AddPersonagem extends AppCompatActivity {
         
         //forca
         if (atletismo.isChecked()){
-            atletismo2 = 2 + retonarModStatus(forca2);
+            atletismo2 = 2 + atletismo2;
         }
         
         //destreza
         if (acrobacia.isChecked()){
-            acrobacia2 = 2 + retonarModStatus(destreza2);
+            acrobacia2 = 2 + acrobacia2;
         }
         if (furtividade.isChecked()){
-            furtividade2 = 2 + retonarModStatus(destreza2);
+            furtividade2 = 2 + furtividade2;
         }
         if (prestigitacao.isChecked()){
-            prestigitacao2 = 2 + retonarModStatus(destreza2);
+            prestigitacao2 = 2 + prestigitacao2;
         }
         //inteligencia
         if (arcanismo.isChecked()){
-            arcanismo2 = 2 + retonarModStatus(inteligencia2);
+            arcanismo2 = 2 + arcanismo2;
         }
         if (historia.isChecked()){
-            historia2 = 2 + retonarModStatus(inteligencia2);
+            historia2 = 2 + historia2;
         }
         if (investigacao.isChecked()){
-            investigacao2 = 2 + retonarModStatus(inteligencia2);
+            investigacao2 = 2 + investigacao2;
         }
         if (natureza.isChecked()){
-            natureza2 = 2 + retonarModStatus(inteligencia2);
+            natureza2 = 2 + natureza2;
         }
         if (religiao.isChecked()){
-            religiao2 = 2 + retonarModStatus(inteligencia2);
+            religiao2 = 2 + religiao2;
         }
         
         //sabedoria
         if (adestraranimais.isChecked()){
-            adestraranimais2 = 2 + retonarModStatus(sabedoria2);
+            adestraranimais2 = 2 + adestraranimais2;
         }
         if (intuicao.isChecked()){
-            intuicao2 = 2 + retonarModStatus(sabedoria2);
+            intuicao2 = 2 + intuicao2;
         }
         if (medicina.isChecked()){
-            medicina2 = 2 + retonarModStatus(sabedoria2);
+            medicina2 = 2 + medicina2;
         }
         if (percepcao.isChecked()){
-            percepcao2 = 2 + retonarModStatus(sabedoria2);
+            percepcao2 = 2 + percepcao2;
         }
         if (sobrevivencia.isChecked()){
-            sobrevivencia2 = 2 + retonarModStatus(sabedoria2);
+            sobrevivencia2 = 2 + sobrevivencia2;
         }
         
         //carisma
         if (atuacao.isChecked()){
-            atuacao2 = 2 + retonarModStatus(carisma2);
+            atuacao2 = 2 + atuacao2;
         }
         if (enganacao.isChecked()){
-            enganacao2 = 2 + retonarModStatus(carisma2);
+            enganacao2 = 2 + enganacao2;
         }
         if (intimidacao.isChecked()){
-            intimidacao2 = 2 + retonarModStatus(carisma2);
+            intimidacao2 = 2 + intimidacao2;
         }
         if (persuasao.isChecked()){
-            persuasao2 = 2 + retonarModStatus(carisma2);
+            persuasao2 = 2 + persuasao2;
         }
     }
     

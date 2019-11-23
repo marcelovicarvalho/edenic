@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardV2"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="150dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -18,31 +23,108 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <TextView
-                        android:id="@+id/nomepersonagem"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="nome"
-                        android:textSize="20sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp">
-                    </TextView>
+                        android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/nome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="nome"
+                            android:textSize="17sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp">
+                        </TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nível: "
+                            android:textSize="17sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp">
+                        </TextView>
+                        <TextView
+                            android:id="@+id/nivel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="14sp">
+                        </TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Classe: "
+                            android:textSize="17sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp">
+                        </TextView>
+                        <TextView
+                            android:id="@+id/classe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="14sp">
+                        </TextView>
+                    </LinearLayout>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <TextView
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="classe"
-                        android:textSize="15sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp">
-                    </TextView>
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Raça: "
+                            android:textSize="17sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp">
+                        </TextView>
+                        <TextView
+                            android:id="@+id/raca"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="14sp">
+                        </TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Background: "
+                            android:textSize="17sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp">
+                        </TextView>
+                        <TextView
+                            android:id="@+id/background"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="14sp">
+                        </TextView>
+                    </LinearLayout>
                 </LinearLayout>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

@@ -412,10 +412,7 @@ public class AddPersonagem extends AppCompatActivity {
                         prestigitacao2 = somaStatus;
     
                         constituicao2 = modificadorStatus(constituicao);
-                        Log.i("PRIMEIRO", String.valueOf(HP));
-                        Log.i("CONSTITUICAO",String.valueOf(somaStatus));
                         calculaHP(classe);
-                        Log.i("",String.valueOf(HP));
     
                         inteligencia2 = modificadorStatus(inteligencia);
                         arcanismo2 = somaStatus;
@@ -527,20 +524,23 @@ public class AddPersonagem extends AppCompatActivity {
                 
                 itemSelecionado();
 
-                Log.i("", nome);
-                Log.i("", raca);
-                Log.i("", classe);
-                Log.i("", background);
-                Log.i("forca", String.valueOf(forca2));
-                Log.i("destreza", String.valueOf(destreza2));
-                Log.i("const", String.valueOf(constituicao2));
-                Log.i("inte", String.valueOf(inteligencia2));
-                Log.i("sabe", String.valueOf(sabedoria2));
-                Log.i("caris", String.valueOf(carisma2));
-                Log.i("hp+", String.valueOf(HP));
+                Log.i("nome ", nome);
+                Log.i("raca ", raca);
+                Log.i("classe ", classe);
+                Log.i("background ", background);
+                Log.i("forca ", String.valueOf(forca2));
+                Log.i("destreza ", String.valueOf(destreza2));
+                Log.i("const ", String.valueOf(constituicao2));
+                Log.i("inte ", String.valueOf(inteligencia2));
+                Log.i("sabe ", String.valueOf(sabedoria2));
+                Log.i("caris ", String.valueOf(carisma2));
+                Log.i("hp+ ", String.valueOf(HP));
 
+                String SQLiteQuery = "INSERT INTO personagens (char_nome, char_nivel,char_raca,char_class,char_back,char_str,char_dex,char_cons,char_int,char_wis,char_char,char_hp) VALUES ('"+nome+"',1,'"+raca+"','"+classe+"','"+background+"','"+String.valueOf(forca2)+"','"+String.valueOf(destreza2)+"','"+String.valueOf(constituicao2)+"','"+String.valueOf(inteligencia2)+"','"+String.valueOf(sabedoria2)+"', '"+String.valueOf(carisma2)+"','"+String.valueOf(HP)+"')";
+                
                 gravaBanco(getBaseContext()).rawQuery("INSERT INTO personagens (char_nome,char_nivel,char_raca,char_class,char_back,char_str,char_dex,char_cons,char_int,char_wis,char_char,char_hp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", new String[]{nome,"1",raca,classe,background,String.valueOf(forca2),String.valueOf(destreza2),String.valueOf(constituicao2),String.valueOf(inteligencia2),String.valueOf(sabedoria2), String.valueOf(carisma2),String.valueOf(HP)});
                 gravaBanco(getBaseContext()).rawQuery("INSERT INTO proficiencias (prof_atl,prof_acr,prof_furt,prof_prest,prof_arc,prof_his,prof_inves,prof_natu,prof_reli,prof_ades,prof_intui,prof_medic,prof_percep,prof_sobre,prof_atua,prof_engana,prof_inti,prof_persu) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", new String[]{String.valueOf(atletismo2),String.valueOf(acrobacia2),String.valueOf(furtividade2),String.valueOf(prestigitacao2),String.valueOf(arcanismo2),String.valueOf(historia2),String.valueOf(investigacao2),String.valueOf(natureza2),String.valueOf(religiao2),String.valueOf(adestraranimais2),String.valueOf(intuicao2),String.valueOf(medicina2),String.valueOf(percepcao2),String.valueOf(sobrevivencia2),String.valueOf(atuacao2),String.valueOf(enganacao2),String.valueOf(intimidacao2),String.valueOf(persuasao2)});
+                gravaBanco(getBaseContext()).execSQL(SQLiteQuery);
                 
                 Toast.makeText(AddPersonagem.this, "Personagem Salvo", Toast.LENGTH_SHORT).show();
                 finish();

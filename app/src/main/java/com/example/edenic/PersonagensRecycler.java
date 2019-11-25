@@ -3,6 +3,7 @@ package com.example.edenic;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,12 +47,13 @@ public class PersonagensRecycler extends RecyclerView.Adapter<PersonagensRecycle
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LinearLayout txt = (LinearLayout) LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_personagens, viewGroup, false);
         PersonagensRecycler.MyViewHolder myViewHolder = new PersonagensRecycler.MyViewHolder(txt);
-        Collections.sort(nome);
+//        Collections.sort(nome);
         return myViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder Holder, int i) {
+        Log.i("I", String.valueOf(i));
         Holder.nome.setText(nome.get(i));
         Holder.nivel.setText(nivel.get(i));
         Holder.classe.setText(classe.get(i));
@@ -60,7 +62,9 @@ public class PersonagensRecycler extends RecyclerView.Adapter<PersonagensRecycle
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
+        Log.i("tamanho", String.valueOf(nome.size()));
         return nome.size();
     }
 

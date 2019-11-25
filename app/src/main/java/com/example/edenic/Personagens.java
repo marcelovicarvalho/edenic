@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,9 @@ public class Personagens extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+        rv2 = findViewById(R.id.recyclerviewPersonagens);
+        setAdapter();
+        
         FloatingActionButton button = findViewById(R.id.addChar);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,16 +45,33 @@ public class Personagens extends AppCompatActivity {
                 AddPersonagem();
             }
         });
+    
+        FloatingActionButton button2 = findViewById(R.id.charUpdate);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updatePersonagem();
+            }
+        });
 
-        rv2 = findViewById(R.id.recyclerviewPersonagens);
 
-        setAdapter();
+
+        
     }
 
     public void AddPersonagem() {
         Intent intent = new Intent(Personagens.this, AddPersonagem.class);
         startActivity(intent);
     }
+
+    public void updatePersonagem() {
+        rv2 = findViewById(R.id.recyclerviewPersonagens);
+        setAdapter();
+        
+        this.finish();
+        Intent intent = new Intent(Personagens.this, Personagens.class);
+        startActivity(intent);
+}
 
     public void setAdapter(){
         DatabaseHandler banco = new DatabaseHandler(this);
@@ -65,6 +85,7 @@ public class Personagens extends AppCompatActivity {
             classe.add(cursor.getString(4));
             raca.add(cursor.getString(3));
             background.add(cursor.getString(5));
+            Log.i("aaa", cursor.getString(1));
         } while (cursor.moveToNext());
         PersonagensRecycler adapter = new PersonagensRecycler(this, nome, nivel, classe, raca, background);
         rv2.setAdapter(adapter);

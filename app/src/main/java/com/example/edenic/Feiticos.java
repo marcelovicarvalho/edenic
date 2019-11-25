@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 //import android.widget.Toast;
@@ -21,6 +22,7 @@ import java.util.List;
 
 public class Feiticos extends AppCompatActivity {
 
+    Context context = Feiticos.this;
     //       private RecyclerView.LayoutManager mRv;
     final ArrayList<String> spell_nome = new ArrayList<>();
     final ArrayList<String> spell_nivel = new ArrayList<>();
@@ -39,40 +41,42 @@ public class Feiticos extends AppCompatActivity {
         setContentView(R.layout.activity_feiticos);
 
         rv = findViewById(R.id.rvtoper);
-
+    
+        SearchView searchView = findViewById(R.id.searchView);
+        
         setAdapter();
         
         //spn sort
-        
-        String [] spnSort = new String[]{"Alfabético","Classe","Nível"};
-        Spinner spinner = (Spinner) findViewById(R.id.spnSort);
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,spnSort);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (adapter.equals("Aflabpetico")){
-                    Collections.sort(spell_nome);
-                    Toast.makeText(Feiticos.this, "top", Toast.LENGTH_SHORT).show();
-                }
-                else if(adapter.equals("Classe")){
-                    Collections.sort(spell_classe);
-                    Toast.makeText(Feiticos.this, "top2", Toast.LENGTH_SHORT).show();
-                }
-                else if(adapter.equals("Nível")){
-                    Collections.sort(spell_nivel);
-                    Toast.makeText(Feiticos.this, "top3", Toast.LENGTH_SHORT).show();
-                }
-            }
-    
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-        
-            }
-        });
-        
+//
+//        String [] spnSort = new String[]{"Alfabético","Classe","Nível"};
+//        Spinner spinner = (Spinner) findViewById(R.id.spnSort);
+//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,spnSort);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
+//
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                if (adapter.equals("Aflabpetico")){
+//                    Collections.sort(spell_nome);
+//                    Toast.makeText(Feiticos.this, "top", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(adapter.equals("Classe")){
+//                    Collections.sort(spell_classe);
+//                    Toast.makeText(Feiticos.this, "top2", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(adapter.equals("Nível")){
+//                    Collections.sort(spell_nivel);
+//                    Toast.makeText(Feiticos.this, "top3", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
         //spn sort
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -83,7 +87,7 @@ public class Feiticos extends AppCompatActivity {
         DatabaseHandler banco = new DatabaseHandler(this);
         SQLiteDatabase db = banco.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from feiticos", new String[]{});
-
+    
         cursor.moveToFirst();
         do {
             spell_nome.add(cursor.getString(1));
@@ -99,9 +103,6 @@ public class Feiticos extends AppCompatActivity {
         mRv = new GridLayoutManager(this.getBaseContext(), 1);
         rv.setLayoutManager(mRv);
     }
-
-
-
 
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();

@@ -15,14 +15,14 @@
                     android:layout_weight="1"
                     android:layout_marginLeft="10dp">
                 </SearchView>
-                <Spinner
-                    android:id="@+id/spnSort"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp">
-                </Spinner>
+<!--                <Spinner-->
+<!--                    android:id="@+id/spnSort"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="2"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginRight="10dp">-->
+<!--                </Spinner>-->
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

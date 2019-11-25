@@ -173,7 +173,6 @@ public class AddPersonagem extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 //                Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                 if (adapterView.getSelectedItem().equals("Clerigo")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     resetaBotoes();
                     historia.setEnabled(true);
                     intuicao.setEnabled(true);
@@ -182,7 +181,6 @@ public class AddPersonagem extends AppCompatActivity {
                     religiao.setEnabled(true);
                 }
                 else if(adapterView.getSelectedItem().equals("Guerreiro")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     resetaBotoes();
                     HP = HP + 10;
                     acrobacia.setEnabled(true);
@@ -195,7 +193,6 @@ public class AddPersonagem extends AppCompatActivity {
                     sobrevivencia.setEnabled(true);
                 }
                 else if(adapterView.getSelectedItem().equals("Ladino")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     resetaBotoes();
                     HP = HP + 8;
                     acrobacia.setEnabled(true);
@@ -208,7 +205,6 @@ public class AddPersonagem extends AppCompatActivity {
                     prestigitacao.setEnabled(true);
                 }
                 else if(adapterView.getSelectedItem().equals("Mago")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     resetaBotoes();
                     HP = HP + 6;
                     arcanismo.setEnabled(true);
@@ -245,17 +241,13 @@ public class AddPersonagem extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (adapterView.getSelectedItem().equals("Humano")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                 }
                 else if(adapterView.getSelectedItem().equals("Anão")){
                     
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                 }
                 else if(adapterView.getSelectedItem().equals("Elfo")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                 }
                 else if(adapterView.getSelectedItem().equals("Halfling")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -286,35 +278,30 @@ public class AddPersonagem extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (adapterView.getSelectedItem().equals("Acólito")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     intuicao.setEnabled(false);
                     intuicao.setChecked(true);
                     religiao.setEnabled(false);
                     religiao.setChecked(true);
                 }
                 else if (adapterView.getSelectedItem().equals("Criminoso")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     enganacao.setEnabled(false);
                     enganacao.setChecked(true);
                     furtividade.setEnabled(false);
                     furtividade.setChecked(true);
                 }
                 else if (adapterView.getSelectedItem().equals("Herói popular")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     adestraranimais.setEnabled(false);
                     adestraranimais.setChecked(true);
                     sobrevivencia.setEnabled(false);
                     sobrevivencia.setChecked(true);
                 }
                 else if (adapterView.getSelectedItem().equals("Sábio")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     arcanismo.setEnabled(false);
                     arcanismo.setChecked(true);
                     historia.setEnabled(false);
                     historia.setChecked(true);
                 }
                 else if (adapterView.getSelectedItem().equals("Soldado")){
-                    Toast.makeText(AddPersonagem.this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                     atletismo.setEnabled(false);
                     atletismo.setChecked(true);
                     intimidacao.setEnabled(false);
@@ -538,7 +525,6 @@ public class AddPersonagem extends AppCompatActivity {
 
                 String SQLiteQuery = "INSERT INTO personagens (char_nome, char_nivel,char_raca,char_class,char_back,char_str,char_dex,char_cons,char_int,char_wis,char_char,char_hp) VALUES ('"+nome+"',1,'"+raca+"','"+classe+"','"+background+"','"+String.valueOf(forca2)+"','"+String.valueOf(destreza2)+"','"+String.valueOf(constituicao2)+"','"+String.valueOf(inteligencia2)+"','"+String.valueOf(sabedoria2)+"', '"+String.valueOf(carisma2)+"','"+String.valueOf(HP)+"')";
                 
-                gravaBanco(getBaseContext()).rawQuery("INSERT INTO personagens (char_nome,char_nivel,char_raca,char_class,char_back,char_str,char_dex,char_cons,char_int,char_wis,char_char,char_hp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", new String[]{nome,"1",raca,classe,background,String.valueOf(forca2),String.valueOf(destreza2),String.valueOf(constituicao2),String.valueOf(inteligencia2),String.valueOf(sabedoria2), String.valueOf(carisma2),String.valueOf(HP)});
                 gravaBanco(getBaseContext()).rawQuery("INSERT INTO proficiencias (prof_atl,prof_acr,prof_furt,prof_prest,prof_arc,prof_his,prof_inves,prof_natu,prof_reli,prof_ades,prof_intui,prof_medic,prof_percep,prof_sobre,prof_atua,prof_engana,prof_inti,prof_persu) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", new String[]{String.valueOf(atletismo2),String.valueOf(acrobacia2),String.valueOf(furtividade2),String.valueOf(prestigitacao2),String.valueOf(arcanismo2),String.valueOf(historia2),String.valueOf(investigacao2),String.valueOf(natureza2),String.valueOf(religiao2),String.valueOf(adestraranimais2),String.valueOf(intuicao2),String.valueOf(medicina2),String.valueOf(percepcao2),String.valueOf(sobrevivencia2),String.valueOf(atuacao2),String.valueOf(enganacao2),String.valueOf(intimidacao2),String.valueOf(persuasao2)});
                 gravaBanco(getBaseContext()).execSQL(SQLiteQuery);
                 

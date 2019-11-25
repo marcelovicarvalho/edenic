@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,11 +22,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyViewHolder> {
+public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyViewHolder> implements Filterable {
 
+    ArrayList<String> spell_nome_all = new ArrayList<>();
+    
     ArrayList<String> spell_nome = new ArrayList<>();
     ArrayList<String> spell_nivel = new ArrayList<>();
     ArrayList<String> spell_cast_time = new ArrayList<>();
@@ -43,6 +48,8 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
         this.spell_duration = spell_duration;
         this.spell_classe = spell_classe;
         this.spell_desc = spell_desc;
+        
+        this.spell_nome_all = new ArrayList<>(spell_nome);
     }
 
     @NonNull
@@ -86,7 +93,44 @@ public class FeiticosRecycler extends RecyclerView.Adapter<FeiticosRecycler.MyVi
         return spell_nome.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+@Override
+public Filter getFilter() {
+    return null;
+}
+
+Filter filter = new Filter() {
+    @Override
+    //run on background thread
+    protected FilterResults performFiltering(CharSequence constraint) {
+        
+        List<String> filteredList = new ArrayList<>();
+        
+        if (constraint.toString().isEmpty()){
+            filteredList.addAll(spell_nome_all);
+        } else {
+            for (String spellnome : spell_nome_all){
+                if (spellnome.toLowerCase().contains(constraint.toString().toLowerCase())){
+                    filteredList.add(spellnome);
+                }
+            }
+        }
+        
+        FilterResults filterResults = new FilterResults();
+        filterResults.values = filteredList;
+        
+        return filterResults;
+    }
+    
+    //run on ui thread
+    @Override
+    protected void publishResults(CharSequence constraint, FilterResults results) {
+        spell_nome.clear();
+        spell_nome.addAll((Collection<? extends String>) results.values);
+        notifyDataSetChanged();
+    }
+};
+
+public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView spell_nome;
         TextView spell_nivel;
         TextView spell_cast_time;

@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,7 +26,7 @@ public class Personagens extends AppCompatActivity {
     final ArrayList<String> classe = new ArrayList<>();
     final ArrayList<String> raca= new ArrayList<>();
     final ArrayList<String> background = new ArrayList<>();
-
+    
     RecyclerView rv2;
     RecyclerView.LayoutManager mRv2;
 
@@ -53,9 +55,9 @@ public class Personagens extends AppCompatActivity {
                 updatePersonagem();
             }
         });
-
-
-
+    
+    
+        
         
     }
 
@@ -65,10 +67,11 @@ public class Personagens extends AppCompatActivity {
     }
 
     public void updatePersonagem() {
-        rv2 = findViewById(R.id.recyclerviewPersonagens);
-        setAdapter();
+        
         
         this.finish();
+        rv2 = findViewById(R.id.recyclerviewPersonagens);
+        setAdapter();
         Intent intent = new Intent(Personagens.this, Personagens.class);
         startActivity(intent);
 }

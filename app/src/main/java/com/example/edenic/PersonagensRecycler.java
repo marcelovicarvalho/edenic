@@ -3,12 +3,14 @@ package com.example.edenic;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -25,12 +27,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class PersonagensRecycler extends RecyclerView.Adapter<PersonagensRecycler.MyViewHolder> {
-
+    
     ArrayList<String> nome = new ArrayList<>();
     ArrayList<String> nivel = new ArrayList<>();
     ArrayList<String> classe = new ArrayList<>();
     ArrayList<String> raca = new ArrayList<>();
     ArrayList<String> background = new ArrayList<>();
+
+    
+    public ImageView deletar;
     Context context;
 
     public PersonagensRecycler(Context context, ArrayList<String> nome, ArrayList<String> nivel, ArrayList<String> classe, ArrayList<String> raca, ArrayList<String> background) {
@@ -75,6 +80,7 @@ public class PersonagensRecycler extends RecyclerView.Adapter<PersonagensRecycle
         TextView raca;
         TextView background;
         CardView cardView;
+        ImageView deletar;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -84,6 +90,8 @@ public class PersonagensRecycler extends RecyclerView.Adapter<PersonagensRecycle
             raca = itemView.findViewById(R.id.raca);
             background = itemView.findViewById(R.id.background);
             cardView = itemView.findViewById(R.id.cardV2);
+            
+            deletar = itemView.findViewById(R.id.deletaChar);
         }
     }
 
